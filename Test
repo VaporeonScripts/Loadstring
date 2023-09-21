@@ -1,243 +1,557 @@
-local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/BroWhats/Rayfield/main/privatesource",true))()
-local PartnerRank = "🔥Partner"
-local DeveloperRank = "⚒️Developer"
-local ModeratorRank = "🔧Moderator"
-local LeaderboardRank = "🌍#82"
-local Wow = "                                                                                                                                                       "
-local speed = (game.Players.LocalPlayer.Character.Humanoid.WalkSpeed)
-local jump = (game.Players.LocalPlayer.Character.Humanoid.JumpPower)
-SpamTime = 10
-local Window = Rayfield:CreateWindow({
-   Name = "Yokonara Partner Scripts",
-   LoadingTitle = "Partner Yokonara Hub",
-   LoadingSubtitle = "by Yokonara",
-   ConfigurationSaving = {
-      Enabled = true,
-      FolderName = "Yokonara Scriptz", -- Create a custom folder for your hub/game
-      FileName = "Yokonara Hub"
-   },
-   Discord = {
-      Enabled = true,
-      Invite = "HM9aCuwhBb",
-      RememberJoins = false
-   },
-   KeySystem = true, -- Set this to true to use our key system
-   KeySettings = {
-      Title = "Yokonara Tags",
-      Subtitle = "Key System",
-      Note = "Join here ty https://discord.gg/HM9aCuwhBb",
-      FileName = "Yokonara Key",
-      SaveKey = true,
-      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = "Yokonara On Top"
-   }
-})
+-- Open source, enjoyyy
+Username = game.Players.LocalPlayer.DisplayName
+Space = "                                                                                                                                                       "
+local PartnerUI = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local TextButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local on = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local off = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local extraoption = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Frame_2 = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextButton_3 = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local TextButton_4 = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local TextButton_5 = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local TextButton_6 = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local TextButton_7 = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local TextButton_8 = Instance.new("TextButton")
+local UICorner_13 = Instance.new("UICorner")
+local TextButton_9 = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local TextButton_10 = Instance.new("TextButton")
+local UICorner_15 = Instance.new("UICorner")
+local closeextra = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
+local off_2 = Instance.new("TextButton")
+local UICorner_17 = Instance.new("UICorner")
+local off_3 = Instance.new("TextButton")
+local UICorner_18 = Instance.new("UICorner")
+local off_4 = Instance.new("TextButton")
+local UICorner_19 = Instance.new("UICorner")
+local TextLabel_3 = Instance.new("TextLabel")
+local Ctag = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
 
-local Tab = Window:CreateTab("Misc Scripts", 4483362458) -- Title, Image
+--Properties:
 
-local Button = Tab:CreateButton({
-   Name = "Anti Lag (optimization)",
-   Callback = function()
-local lighting = game.Lighting
-local terrain = game.Workspace.Terrain
-terrain.WaterWaveSize = 0
-terrain.WaterWaveSpeed = 0
-terrain.WaterReflectance = 0
-terrain.WaterTransparency = 0
-lighting.GlobalShadows = false
-lighting.FogStart = 0
-lighting.FogEnd = 0
-lighting.Brightness = 0
-settings().Rendering.QualityLevel = "Level01"
+PartnerUI.Name = "PartnerUI"
+PartnerUI.Parent = game.CoreGui
+PartnerUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-for i, v in pairs(game:GetDescendants()) do
-    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-        v.Lifetime = NumberRange.new(0)
-    elseif v:IsA("Explosion") then
-        v.BlastPressure = 1
-        v.BlastRadius = 1
-    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-        v.Enabled = false
-    elseif v:IsA("MeshPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-    end
-end
+Frame.Parent = PartnerUI
+Frame.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Frame.Position = UDim2.new(0.273684204, 0, 0.150617287, 0)
+Frame.Size = UDim2.new(0, 327, 0, 165)
+Frame.Active = true
+Frame.Draggable = true
 
-for i, e in pairs(lighting:GetChildren()) do
-    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-        e.Enabled = false
-    end
-end
-   end,
-})
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = Frame
 
-local Button = Tab:CreateButton({
-   Name = "Visual Hoverboard",
-   Callback = function()
-local sex1 = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
-  sex1.Hoverboards = {}
-for i,v in pairs(game:GetService("ReplicatedStorage")["__DIRECTORY"].Hoverboards:GetChildren())do
-    if v:IsA("Folder") then
-     table.insert(sex1.Hoverboards, v.Name)
-    end
-end
-getsenv(game.Players.LocalPlayer.PlayerScripts.Scripts.GUIs.Hoverboards).Update()
-    getsenv(game.Players.LocalPlayer.PlayerScripts.Scripts.GUIs.Hoverboards).Equip = function(board)
-      sex1.EquippedHoverboard = board
-    getsenv(game.Players.LocalPlayer.PlayerScripts.Scripts.GUIs.Hoverboards).Update()
-end
-   end,
-})
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+TextBox.Position = UDim2.new(0.0244648326, 0, 0.0413192064, 0)
+TextBox.Size = UDim2.new(0, 238, 0, 24)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(165, 165, 165)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
 
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton.Position = UDim2.new(0.773700297, 0, 0.0402825214, 0)
+TextButton.Size = UDim2.new(0, 69, 0, 24)
+TextButton.Font = Enum.Font.Gotham
+TextButton.Text = "Send"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+TextButton.MouseButton1Down:connect(function()
+	if Ctag.Text == "🔧Moderator" then
+		local chatmessage = game.CoreGui.PartnerUI.Frame.TextBox.Text
 
-local Slider = Tab:CreateSlider({
-   Name = "Walk Speed",
-   Range = {1, 250},
-   Increment = 1,
-   Suffix = "Walk Speed",
-   CurrentValue = speed,
-   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
-   end,
-})
+		local args = {
+			[1] = "".. Space .."[🔧Moderator] ["..Username.."]: " .. chatmessage,
+			[2] = "All"
+		}
 
-local Slider = Tab:CreateSlider({
-   Name = "Jump Power",
-   Range = {1, 250},
-   Increment = 1,
-   Suffix = "Jump Power",
-   CurrentValue = jump,
-   Flag = "Slider2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-       game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
-   end,
-})
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
-local Tab = Window:CreateTab("Fake Tags (NEW UPDATE)", 4483362458) -- Title, Image
+	end
+	if Ctag.Text == "🔥Partner" then
+		local chatmessage = game.CoreGui.PartnerUI.Frame.TextBox.Text
 
-local Button = Tab:CreateButton({
-    Name = "Basic Settings (CLICK ONCE)",
-    Callback = function()
-Rank = PartnerRank
-Message = "SIGNING HUGES TRADE ME"
-SpamTime = 10
-    end,
-})
+		local args = {
+			[1] = "".. Space .."[🔥Partner] ["..Username.."]: " .. chatmessage,
+			[2] = "All"
+		}
 
-local Dropdown = Tab:CreateDropdown({
-    Name = "Rank Picker",
-    Options = {"Partner","Developer","Moderator","Leaderboard"},
-    CurrentOption = "",
-    MultipleOptions = false,
-    Flag = "123", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-        if Value == 'Partner' then
-            Rank = PartnerRank
-        elseif Value == 'Developer' then
-            Rank = DeveloperRank
-        elseif Value == 'Moderator' then
-            Rank = ModeratorRank
-        elseif Value == 'Leaderboard' then
-            Rank = LeaderboardRank
-        end
-    end,
-})
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
+	end
+	if Ctag.Text == "💎NFT" then
+		local chatmessage = game.CoreGui.PartnerUI.Frame.TextBox.Text
 
-local Input = Tab:CreateInput({
-    Name = "Message",
-    PlaceholderText = "Text Here",
-    RemoveTextAfterFocusLost = true,
-    Callback = function(Text)
-        Message = Text -- Assign the value of the input field to the variable "Message"
-    end,
-})
+		local args = {
+			[1] = "".. Space .."[💎NFT] ["..Username.."]: " .. chatmessage,
+			[2] = "All"
+		}
 
-local Button = Tab:CreateButton({
-    Name = "Send Message",
-    Callback = function()
-        if Rank and Message then -- Check that Rank and Message have been properly assigned values
-            game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(""..Wow.."["..Rank.."] ["..game.Players.LocalPlayer.DisplayName.."]: "..Message, "All")
-        end
-    end,
-})
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
-local Slider = Tab:CreateSlider({
-    Name = "Spam Speed",
-    Range = {1, 60},
-    Increment = 1,
-    Suffix = "Seconds",
-    CurrentValue = 10,
-    Flag = "SliderSpam", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-        SpamTime = Value
-    end,
- })
- 
-local Toggle = Tab:CreateToggle({
-    Name = "Message Spam (toggleable)",
-    CurrentValue = false,
-    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-  task.spawn(function()
-  getgenv().toggleLoop = Value
-  while getgenv().toggleLoop and task.wait() do
-game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(""..Wow.."["..Rank.."] ["..game.Players.LocalPlayer.DisplayName.."]: "..Message.."", "All")
-wait(SpamTime)
-end
+	end
+	if Ctag.Text == "🛠Developer" then
+		local chatmessage = game.CoreGui.PartnerUI.Frame.TextBox.Text
+
+		local args = {
+			[1] = "".. Space .."[🛠Developer] ["..Username.."]: " .. chatmessage,
+			[2] = "All"
+		}
+
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+	end
+
 end)
- end,
-})
 
-local Button = Tab:CreateButton({
-    Name = "Serverhop (big servers)",
-    Callback = function()
-        local function serverhop()
-            print("Server hop is triggered")
-            local response = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Desc&limit=50"))
-            if response and response["data"] then
-                for i, v in pairs(response["data"]) do
-                    if v["playing"] ~= v["maxPlayers"] then
-                        game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v["id"])
-                        break
-                    end
-                end
-            else
-                print("Error: failed to decode JSON response or missing data field.")
-            end
-        end
-        while true do
-wait(0.1)
-        serverhop()
-       end
-    end,
- })
- 
- local Button = Tab:CreateButton({
-    Name = "Serverhop (small servers)",
-    Callback = function()
-        local function serverhop1()
-            print("Server hop is triggered")
-            local response = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=50"))
-            if response and response["data"] then
-                for i, v in pairs(response["data"]) do
-                    if v["playing"] ~= v["maxPlayers"] then
-                        game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v["id"])
-                        break
-                    end
-                end
-            else
-                print("Error: failed to decode JSON response or missing data field.")
-            end
-        end
-        while true do
-wait(0.1)
-        serverhop1()
-       end
-    end,
- })
+UICorner_2.Parent = TextButton
+
+on.Name = "on"
+on.Parent = Frame
+on.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+on.Position = UDim2.new(0.0244648326, 0, 0.424274981, 0)
+on.Size = UDim2.new(0, 30, 0, 30)
+on.Visible = false
+on.Font = Enum.Font.SourceSans
+on.Text = ""
+on.TextColor3 = Color3.fromRGB(0, 0, 0)
+on.TextSize = 14.000
+
+UICorner_3.Parent = on
+
+off.Name = "off"
+off.Parent = Frame
+off.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+off.Position = UDim2.new(0.0244648326, 0, 0.224536195, 0)
+off.Size = UDim2.new(0, 113, 0, 23)
+off.Font = Enum.Font.Gotham
+off.Text = "🔥Partner"
+off.TextColor3 = Color3.fromRGB(0, 0, 0)
+off.TextScaled = true
+off.TextSize = 14.000
+off.TextWrapped = true
+
+UICorner_4.Parent = off
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0, 0, 0.877812982, 0)
+TextLabel.Size = UDim2.new(0, 327, 0, 20)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "Yokonara Revamped"
+TextLabel.TextColor3 = Color3.fromRGB(103, 103, 103)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+extraoption.Name = "extraoption"
+extraoption.Parent = Frame
+extraoption.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+extraoption.Position = UDim2.new(0.883792043, 0, 0.221667737, 0)
+extraoption.Size = UDim2.new(0, 33, 0, 24)
+extraoption.Font = Enum.Font.Gotham
+extraoption.Text = ">"
+extraoption.TextColor3 = Color3.fromRGB(0, 0, 0)
+extraoption.TextScaled = true
+extraoption.TextSize = 14.000
+extraoption.TextWrapped = true
+
+UICorner_5.Parent = extraoption
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Frame_2.Position = UDim2.new(0.999671102, 0, -0.044311583, 0)
+Frame_2.Size = UDim2.new(0, 176, 0, 179)
+Frame_2.Visible = false
+
+UICorner_6.CornerRadius = UDim.new(0, 10)
+UICorner_6.Parent = Frame_2
+
+TextButton_2.Parent = Frame_2
+TextButton_2.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_2.Position = UDim2.new(0.0347019546, 0, 0.0593149289, 0)
+TextButton_2.Size = UDim2.new(0, 160, 0, 25)
+TextButton_2.Font = Enum.Font.Gotham
+TextButton_2.Text = "Hop Trading Plazas"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
+UICorner_7.Parent = TextButton_2
+
+TextLabel_2.Parent = Frame_2
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.0209201463, 0, 0.241466761, 0)
+TextLabel_2.Size = UDim2.new(0, 160, 0, 20)
+TextLabel_2.Font = Enum.Font.Gotham
+TextLabel_2.Text = "Auto-Chat"
+TextLabel_2.TextColor3 = Color3.fromRGB(103, 103, 103)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextButton_3.Parent = Frame_2
+TextButton_3.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_3.Position = UDim2.new(0.0347019546, 0, 0.405389637, 0)
+TextButton_3.Size = UDim2.new(0, 123, 0, 21)
+TextButton_3.Font = Enum.Font.Gotham
+TextButton_3.Text = "\"Hello!\""
+TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.TextScaled = true
+TextButton_3.TextSize = 14.000
+TextButton_3.TextWrapped = true
+
+UICorner_8.Parent = TextButton_3
+
+TextButton_4.Parent = Frame_2
+TextButton_4.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_4.Position = UDim2.new(0.0349998474, 0, 0.550000072, 0)
+TextButton_4.Size = UDim2.new(0, 122, 0, 21)
+TextButton_4.Font = Enum.Font.Gotham
+TextButton_4.Text = "\"Signing pets!\""
+TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.TextScaled = true
+TextButton_4.TextSize = 14.000
+TextButton_4.TextWrapped = true
+
+UICorner_9.Parent = TextButton_4
+
+TextButton_5.Parent = Frame_2
+TextButton_5.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_5.Position = UDim2.new(0.0349998474, 0, 0.690893948, 0)
+TextButton_5.Size = UDim2.new(0, 122, 0, 21)
+TextButton_5.Font = Enum.Font.Gotham
+TextButton_5.Text = "\"SIGNING HUGES SEND ME TRADE\""
+TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.TextScaled = true
+TextButton_5.TextSize = 14.000
+TextButton_5.TextWrapped = true
+
+UICorner_10.Parent = TextButton_5
+
+TextButton_6.Parent = Frame_2
+TextButton_6.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_6.Position = UDim2.new(0.0349998474, 0, 0.836145222, 0)
+TextButton_6.Size = UDim2.new(0, 122, 0, 21)
+TextButton_6.Font = Enum.Font.Gotham
+TextButton_6.Text = "\"I can only sign huges, sorry\""
+TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.TextScaled = true
+TextButton_6.TextSize = 14.000
+TextButton_6.TextWrapped = true
+
+UICorner_11.Parent = TextButton_6
+
+TextButton_7.Parent = Frame_2
+TextButton_7.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_7.Position = UDim2.new(0.75629282, 0, 0.405389637, 0)
+TextButton_7.Size = UDim2.new(0, 34, 0, 21)
+TextButton_7.Font = Enum.Font.Gotham
+TextButton_7.Text = "C"
+TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_7.TextScaled = true
+TextButton_7.TextSize = 14.000
+TextButton_7.TextWrapped = true
+
+UICorner_12.Parent = TextButton_7
+
+TextButton_8.Parent = Frame_2
+TextButton_8.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_8.Position = UDim2.new(0.75629282, 0, 0.545054436, 0)
+TextButton_8.Size = UDim2.new(0, 34, 0, 21)
+TextButton_8.Font = Enum.Font.Gotham
+TextButton_8.Text = "C"
+TextButton_8.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_8.TextScaled = true
+TextButton_8.TextSize = 14.000
+TextButton_8.TextWrapped = true
+
+UICorner_13.Parent = TextButton_8
+
+TextButton_9.Parent = Frame_2
+TextButton_9.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_9.Position = UDim2.new(0.75629282, 0, 0.690305829, 0)
+TextButton_9.Size = UDim2.new(0, 34, 0, 21)
+TextButton_9.Font = Enum.Font.Gotham
+TextButton_9.Text = "C"
+TextButton_9.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_9.TextScaled = true
+TextButton_9.TextSize = 14.000
+TextButton_9.TextWrapped = true
+
+UICorner_14.Parent = TextButton_9
+
+TextButton_10.Parent = Frame_2
+TextButton_10.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextButton_10.Position = UDim2.new(0.75629282, 0, 0.835557222, 0)
+TextButton_10.Size = UDim2.new(0, 34, 0, 21)
+TextButton_10.Font = Enum.Font.Gotham
+TextButton_10.Text = "C"
+TextButton_10.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_10.TextScaled = true
+TextButton_10.TextSize = 14.000
+TextButton_10.TextWrapped = true
+
+UICorner_15.Parent = TextButton_10
+
+closeextra.Name = "closeextra"
+closeextra.Parent = Frame
+closeextra.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+closeextra.Position = UDim2.new(0.883792043, 0, 0.439849555, 0)
+closeextra.Size = UDim2.new(0, 33, 0, 24)
+closeextra.Visible = false
+closeextra.Font = Enum.Font.Gotham
+closeextra.Text = "<"
+closeextra.TextColor3 = Color3.fromRGB(0, 0, 0)
+closeextra.TextScaled = true
+closeextra.TextSize = 14.000
+closeextra.TextWrapped = true
+
+UICorner_16.Parent = closeextra
+
+off_2.Name = "off"
+off_2.Parent = Frame
+off_2.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+off_2.Position = UDim2.new(0.40672785, 0, 0.224536195, 0)
+off_2.Size = UDim2.new(0, 113, 0, 23)
+off_2.Font = Enum.Font.Gotham
+off_2.Text = "🔧Moderator"
+off_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+off_2.TextScaled = true
+off_2.TextSize = 14.000
+off_2.TextWrapped = true
+
+UICorner_17.Parent = off_2
+
+off_3.Name = "off"
+off_3.Parent = Frame
+off_3.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+off_3.Position = UDim2.new(0.0244648326, 0, 0.424536198, 0)
+off_3.Size = UDim2.new(0, 113, 0, 23)
+off_3.Font = Enum.Font.Gotham
+off_3.Text = "💎NFT"
+off_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+off_3.TextScaled = true
+off_3.TextSize = 14.000
+off_3.TextWrapped = true
+
+UICorner_18.Parent = off_3
+
+off_4.Name = "off"
+off_4.Parent = Frame
+off_4.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+off_4.Position = UDim2.new(0.40672785, 0, 0.424536198, 0)
+off_4.Size = UDim2.new(0, 113, 0, 23)
+off_4.Font = Enum.Font.Gotham
+off_4.Text = "🛠Developer"
+off_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+off_4.TextScaled = true
+off_4.TextSize = 14.000
+off_4.TextWrapped = true
+
+UICorner_19.Parent = off_4
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0, 0, 0.605085731, 0)
+TextLabel_3.Size = UDim2.new(0, 113, 0, 20)
+TextLabel_3.Font = Enum.Font.Gotham
+TextLabel_3.Text = "Current Tag:"
+TextLabel_3.TextColor3 = Color3.fromRGB(103, 103, 103)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+Ctag.Name = "Ctag"
+Ctag.Parent = Frame
+Ctag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ctag.BackgroundTransparency = 1.000
+Ctag.Position = UDim2.new(0.345565736, 0, 0.605085731, 0)
+Ctag.Size = UDim2.new(0, 133, 0, 20)
+Ctag.Font = Enum.Font.Gotham
+Ctag.Text = "🔥Partner"
+Ctag.TextColor3 = Color3.fromRGB(103, 103, 103)
+Ctag.TextScaled = true
+Ctag.TextSize = 14.000
+Ctag.TextWrapped = true
+
+TextLabel_4.Parent = Frame
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0, 0, 0.756600857, 0)
+TextLabel_4.Size = UDim2.new(0, 327, 0, 20)
+TextLabel_4.Font = Enum.Font.Gotham
+TextLabel_4.Text = "Use this script on an alt! Cuz U risk ban bozo."
+TextLabel_4.TextColor3 = Color3.fromRGB(103, 103, 103)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+
+-- Scripts:
+
+local function GYMHAN_fake_script() -- on.LocalScript 
+	local script = Instance.new('LocalScript', on)
+
+	script.Parent.MouseButton1Down:connect(function()
+		script.Parent.Visible = false
+		script.Parent.Parent.off.Visible = true
+	end)
+end
+coroutine.wrap(GYMHAN_fake_script)()
+local function NHFAM_fake_script() -- off.LocalScript 
+	local script = Instance.new('LocalScript', off)
+
+	script.Parent.MouseButton1Down:connect(function()
+		Ctag.Text = "🔥Partner"
+	end)
+end
+coroutine.wrap(NHFAM_fake_script)()
+local function QNEBF_fake_script() -- extraoption.LocalScript 
+	local script = Instance.new('LocalScript', extraoption)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game.CoreGui.PartnerUI.Frame.Frame.Visible = true
+		game.CoreGui.PartnerUI.Frame.closeextra.Visible = true
+		script.Parent.Visible = false
+	end)
+end
+coroutine.wrap(QNEBF_fake_script)()
+local function FWVGEP_fake_script() -- TextButton_2.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_2)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game:GetService('TeleportService'):Teleport(7722306047)
+	end)
+	
+end
+coroutine.wrap(FWVGEP_fake_script)()
+local function DRRHNF_fake_script() -- TextButton_3.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_3)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game.CoreGui.PartnerUI.Frame.TextBox.Text = "Hello!"
+	end)
+end
+coroutine.wrap(DRRHNF_fake_script)()
+local function FCIC_fake_script() -- TextButton_4.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_4)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game.CoreGui.PartnerUI.Frame.TextBox.Text = "Signing pets!"
+	end)
+end
+coroutine.wrap(FCIC_fake_script)()
+local function YSBJYS_fake_script() -- TextButton_5.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_5)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game.CoreGui.PartnerUI.Frame.TextBox.Text = "SIGNING HUGES SEND ME TRADE"
+	end)
+end
+coroutine.wrap(YSBJYS_fake_script)()
+local function NFQK_fake_script() -- TextButton_6.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_6)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game.CoreGui.PartnerUI.Frame.TextBox.Text = "Partners can only sign huges, sorry"
+	end)
+end
+coroutine.wrap(NFQK_fake_script)()
+local function CWBIQZ_fake_script() -- TextButton_7.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_7)
+
+	script.Parent.MouseButton1Down:connect(function()
+		setclipboard('Hello!')
+	end)
+end
+coroutine.wrap(CWBIQZ_fake_script)()
+local function TULX_fake_script() -- TextButton_8.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_8)
+
+	script.Parent.MouseButton1Down:connect(function()
+		setclipboard('Signing pets!')
+	end)
+end
+coroutine.wrap(TULX_fake_script)()
+local function VENNTQ_fake_script() -- TextButton_9.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_9)
+
+	script.Parent.MouseButton1Down:connect(function()
+		setclipboard('You need me to sign anything?')
+	end)
+end
+coroutine.wrap(VENNTQ_fake_script)()
+local function EKPBIKM_fake_script() -- TextButton_10.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_10)
+
+	script.Parent.MouseButton1Down:connect(function()
+		setclipboard('Partners can only sign exclusives, sorry')
+	end)
+end
+coroutine.wrap(EKPBIKM_fake_script)()
+local function UQZBUHA_fake_script() -- closeextra.LocalScript 
+	local script = Instance.new('LocalScript', closeextra)
+
+	script.Parent.MouseButton1Down:connect(function()
+		game.CoreGui.PartnerUI.Frame.Frame.Visible = false
+		game.CoreGui.PartnerUI.Frame.extraoption.Visible = true
+		script.Parent.Visible = false
+	end)
+end
+coroutine.wrap(UQZBUHA_fake_script)()
+local function LZPAMOK_fake_script() -- off_2.LocalScript 
+	local script = Instance.new('LocalScript', off_2)
+
+	script.Parent.MouseButton1Down:connect(function()
+		Ctag.Text = "🔧Moderator"
+	end)
+end
+coroutine.wrap(LZPAMOK_fake_script)()
+local function BWWKHCS_fake_script() -- off_3.LocalScript 
+	local script = Instance.new('LocalScript', off_3)
+
+	script.Parent.MouseButton1Down:connect(function()
+		Ctag.Text = "💎NFT"
+	end)
+end
+coroutine.wrap(BWWKHCS_fake_script)()
+local function DNBCNJ_fake_script() -- off_4.LocalScript 
+	local script = Instance.new('LocalScript', off_4)
+
+	script.Parent.MouseButton1Down:connect(function()
+		Ctag.Text = "🛠Developer"
+	end)
+end
+coroutine.wrap(DNBCNJ_fake_script)()
